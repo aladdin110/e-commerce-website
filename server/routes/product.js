@@ -1,10 +1,11 @@
 import express from 'express';
 const ProductRouter = express.Router();
+const router = express.Router();
 
-router.get('/', {
+ /* router.get('/', {
     
 });
-
+ */
 
 
 export default ProductRouter;
