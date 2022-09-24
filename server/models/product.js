@@ -24,5 +24,5 @@ const productSchema = new Schema({
     }
 });
 
-//create and export product model from the above Schema
+//create and export product model from the above schema
 export const Product =  model('Product', productSchema);
