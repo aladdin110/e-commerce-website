@@ -4,7 +4,7 @@ import { getProducts, createProduct } from '../services/product.js';
 var ProductRouter = express.Router();
 
 //route for product get request
-ProductRouter.get('/getProducts', (req, res) => {
+ProductRouter.get('/', (req, res) => {
     //call the corresponding function from product service
     getProducts(req,res);
 });

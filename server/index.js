@@ -10,7 +10,7 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
 
-app.use(ProductRouter);
+app.use('/product', ProductRouter);
 
 const CONNECTION_URL = 'mongodb+srv://medaminetanouyat4:Wdp1fp7z9E8TEE2Q@cluster0.of5gle5.mongodb.net/ecommercedb?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 8080;
