@@ -1,0 +1,27 @@
+
+.swiper-button-next{
+    position: absolute !important;
+    top: 98%!important;
+    left: 70%;
+    color: white;
+    background-color: white;
+    height: 15px;
+    /* bottom: 0px !important; */
+    z-index: 1000000 !important;
+}
+.swiper-button-next:after{
+content: url("https://icon-library.com/images/arrow-left-01-512.png") !important;;
+}
+.swiper-button-prev{
+    position: absolute !important;
+    top: 98%!important;
+    left: 30%;
+    color: white;
+    background-color: white;
+    height: 15px;
+    /* bottom: 0px !important; */
+    z-index: 1000000 !important;
+}
+.swiper-button-prev:after{
+content: url("https://icon-library.com/images/arrow-left-01-512.png") !important;;
+}
