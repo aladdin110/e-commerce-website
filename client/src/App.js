@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useRef, lazy, Suspense, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Navbar from "./Component/Navbar/navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AboutUs from "./Component/aboutus/AboutUs";
+import Shop from "./Component/Shop/Shop";
+import Home from "./Component/home/Home";
 
 function App() {
+  const dispatch = useDispatch();
+  const Product = useSelector((state) => state.Product);
+  console.log(Product);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route path="shop" element={<Shop />}></Route>
+          <Route path="aboutus" element={<AboutUs />}></Route>
+          <Route replace to="/" />
+        </Routes>
+      </BrowserRouter>
+      
     </div>
   );
 }
