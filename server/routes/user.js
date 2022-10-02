@@ -11,19 +11,19 @@ UserRouter.get('/getUsers', (req, res) => {
 
 //route for user post request
 UserRouter.post('/createUser', (req, res) => {
-    //call the corresponding function from product service
+    //call the corresponding function from user service
     createUser(req,res);
 });
 
 //route for user put request
 UserRouter.put('/updateUser', (req, res) => {
-    //call the corresponding function from product service
+    //call the corresponding function from user service
     updateUser(req,res);
 });
 
 //route for user delete request
 UserRouter.delete('/deleteUser', (req, res) => {
-    //call the corresponding function from product service
+    //call the corresponding function from user service
     deleteUser(req,res);
 });
 
