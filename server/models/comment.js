@@ -29,5 +29,5 @@ const commentSchema = new Schema({
 
 });
 
-//create and export order model from the above schema
-export const Comment =  model('Order', commentSchema);
+//create and export comment model from the above schema
+export const Comment =  model('Comment', commentSchema);

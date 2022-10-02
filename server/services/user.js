@@ -1,6 +1,7 @@
 /* user requests handling service*/
 
-import {User} from "../models/user.js"
+import {User} from "../models/user.js";
+import bcrypt from "bcryptjs";
 
 //handle get users request
 export const getUsers = async(req, res) => {
@@ -21,6 +22,9 @@ export const createUser = async(req, res) => {
         username,
         password
     })
+    //encrypt password before saving
+    const salt = bcrypt.genSaltSync(10);
+    user.password = bcrypt.hashSync(password, salt);
     //attempt to save created user in db
     user.save((err, user) => {
         if(err){

@@ -1,7 +1,7 @@
 import express from 'express';
 import { createComment, deleteComment, getComments, updateComment } from '../services/comment.js';
 
-var OrderRouter = express.Router();
+var CommentRouter = express.Router();
 
 //route for comment get request
 CommentRouter.get('/getComments', (req, res) => {
