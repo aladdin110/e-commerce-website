@@ -57,9 +57,14 @@ function SwiperElement(props) {
         <div className="Description1">
           <h2 className="Description">Modern Furniture For Decoration</h2>
         </div>
-        <div style={{      marginTop: "2rem",  height: "2px",
-    backgroundColor: "#d9d9d9",
-    width: "150px"}} ></div>
+        <div
+          style={{
+            marginTop: "2rem",
+            height: "2px",
+            backgroundColor: "#d9d9d9",
+            width: "150px",
+          }}
+        ></div>
         <div className="phrase">
           <p>We are experts in curtain and blinds We have.</p>
         </div>
@@ -67,14 +72,18 @@ function SwiperElement(props) {
           <h3 className="Only">ONLY</h3>
           <div className="Price">{props.price}</div>
         </div>
-        <button className="ShopNow">
-          SHOP NOW
-        </button>
+        <button className="ShopNow">SHOP NOW</button>
       </div>
       <div className="col-6 RightSide Animate">
         <div className="ImgBackGroundColor"></div>
         <div className="ProductImg">
-          <img className="ImgPosition" src="https://demo.phlox.pro/shop-decoration/wp-content/uploads/sites/136/2022/04/Wooden20Table.H03.2k-647x647.png" alt="img" height={"90%"} width={"90%"} />
+          <img
+            className="ImgPosition"
+            src="https://demo.phlox.pro/shop-decoration/wp-content/uploads/sites/136/2022/04/Wooden20Table.H03.2k-647x647.png"
+            alt="img"
+            height={"90%"}
+            width={"90%"}
+          />
         </div>
       </div>
     </div>
