@@ -3,6 +3,7 @@ import { getProducts, createProduct, updateProduct, deleteProduct } from '../ser
 
 var ProductRouter = express.Router();
 
+
 //route for product get request
 ProductRouter.get('/getProducts', (req, res) => {
     //call the corresponding function from product service
@@ -26,7 +27,5 @@ ProductRouter.delete('/deleteProduct', (req, res) => {
     //call the corresponding function from product service
     deleteProduct(req,res);
 });
-
-
 
 export default ProductRouter;

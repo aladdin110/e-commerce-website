@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import { model } from 'mongoose';
 const Schema = mongoose.Schema;
 
+
 //our model schema to represent order collection in db
 const orderSchema = new Schema({
     products: [{
