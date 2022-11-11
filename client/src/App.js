@@ -1,11 +1,12 @@
 import "./App.css";
 import React, { useRef, lazy, Suspense, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "./Component/Navbar/navbar";
+import Navbar from "./components/Navbar/navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AboutUs from "./Component/aboutus/AboutUs";
-import Shop from "./Component/Shop/Shop";
-import Home from "./Component/home/Home";
+import AboutUs from "./components/aboutus/AboutUs";
+import Shop from "./components/Shop/Shop";
+import Home from "./components/home/Home";
+import ContactUs from "./components/contact/ContactUs";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/" element={<Home />}></Route>
           <Route path="shop" element={<Shop />}></Route>
           <Route path="aboutus" element={<AboutUs />}></Route>
+          <Route path="contactus" element={<ContactUs />}></Route>
           <Route replace to="/" />
         </Routes>
       </BrowserRouter>

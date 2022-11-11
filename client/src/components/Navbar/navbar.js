@@ -27,6 +27,11 @@ export default function Navbar() {
           <Link to="aboutus">About US</Link>
         </div>
       </li>
+      <li className="navBar-list">
+        <div className=" navBar-item">
+          <Link to="contactus">Contact Us</Link>
+        </div>
+      </li>
     </div>
   );
 }
