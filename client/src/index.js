@@ -4,8 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store'
-import { Provider } from 'react-redux'
-
+import { Provider } from 'react-redux';
 import { getPosts } from './redux/actions/ProductAction';
 // As of React 18
 store.dispatch(getPosts())

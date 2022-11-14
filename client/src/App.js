@@ -9,10 +9,10 @@ import { BreadcrumbsProvider } from "react-breadcrumbs-dynamic";
 
 /* 
  */
-const Home = lazy(() => import("./components/home/Home"));
-const Shop = lazy(() => import("./components/Shop/Shop"));
-const AboutUs = lazy(() => import("./components/aboutus/AboutUs"));
-const ContactUs = lazy(() => import("./components/contact/ContactUs"));
+const Home = lazy(() => import("./components/pages/home/Home"));
+const Shop = lazy(() => import("./components/pages/Shop/Shop"));
+const AboutUs = lazy(() => import("./components/pages/aboutus/AboutUs"));
+const ContactUs = lazy(() => import("./components/pages/contact/ContactUs"));
 /* 
  */
 
