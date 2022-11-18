@@ -1,4 +1,4 @@
-import "../../../assets/styles/_contact.scss";
+import "../../../assets/styles/style.scss";
 import LocationMap from "./LocationMap";
 
 
@@ -74,6 +74,9 @@ const ContactUs = () => {
                 <div className="contact-form">
                   <div className="contact-title mb-30">
                     <h2>Nous contacter</h2>
+                    <small className="text-muted">Si vous voudrez proposer une offre, 
+                      demander une rénovation ou seulemnt nous contacter afin d'obtenir des informations 
+                    </small>
                   </div>
                   <form className="contact-form-style">
                     <div className="row">

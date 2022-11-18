@@ -1,7 +1,16 @@
-import React from 'react'
+import "../../../assets/styles/style.scss";
+import AboutUsAspects from "./AboutUsAspects";
+import SectionTitleWithText from './SectionTitleWithText';
 
-export default function AboutUs() {
+
+const AboutUs = () => {
   return (
-    <p>About us</p>
+    <>
+      {/* section title with text */}
+      <SectionTitleWithText spaceTopClass="pt-100" spaceBottomClass="pb-95" />
+
+      <AboutUsAspects />
+    </>
   )
 }
+export default AboutUs

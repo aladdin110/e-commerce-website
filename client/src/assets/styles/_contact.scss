@@ -1,6 +1,5 @@
-@import "../../assets/styles/variables";
-@import "../../assets/styles/common";
 /*------ 22. contact Page  ------*/
+
 
 .contact-map {
   position: relative;
@@ -13,7 +12,7 @@
 
 .contact-info-wrap {
   padding: 120px 70px 116px 90px;
-
+  
   background-color: #f3f3f3;
   @media #{$lg-layout} {
     padding: 120px 20px 116px 40px;
