@@ -56,24 +56,8 @@ const HeaderOne = ({
           scroll > headerTop ? "stick" : ""
         }`}
       >
-        <div className={layout === "container-fluid" ? layout : "container"}>
-          <div className="row">
-            <div className="col-xl-2 col-lg-2 col-md-6 col-4">
-              {/* header logo */}
-              <Logo imageUrl="/assets/img/logo/logo.png" logoClass="logo" />
-            </div>
-            <div className="col-xl-8 col-lg-8 d-none d-lg-block">
-              {/* Nav menu */}
-              <NavMenu />
-            </div>
-            <div className="col-xl-2 col-lg-2 col-md-6 col-8">
-              {/* Icon group */}
-              <IconGroup />
-            </div>
-          </div>
-        </div>
-        {/* mobile menu */}
-        <MobileMenu />
+     
+ 
       </div>
     </header>
   );

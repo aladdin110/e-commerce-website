@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import IconGroup from "../../components/header/IconGroup";
 export default function Navbar() {
   return (
     <div className="navbar">
@@ -32,6 +33,7 @@ export default function Navbar() {
           <Link to="contactus">Contact Us</Link>
         </div>
       </li>
+      <IconGroup/>
     </div>
   );
 }

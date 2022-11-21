@@ -34,10 +34,10 @@ export default function Swiper1() {
       onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
-        <SwiperElement price="199.00$" />
+        <SwiperElement price="199.00$" src={"https://demo.phlox.pro/shop-decoration/wp-content/uploads/sites/136/2022/04/Wooden20Table.H03.2k-647x647.png"} />
       </SwiperSlide>
       <SwiperSlide>
-        <SwiperElement price="1995.00$" />
+        <SwiperElement price="1995.00$" src={"hh.jpeg"} />
       </SwiperSlide>
       <SwiperSlide>
         <SwiperElement price="1949.00$" />
@@ -79,7 +79,7 @@ function SwiperElement(props) {
         <div className="ProductImg">
           <img
             className="ImgPosition"
-            src="https://demo.phlox.pro/shop-decoration/wp-content/uploads/sites/136/2022/04/Wooden20Table.H03.2k-647x647.png"
+            src={props.src}
             alt="img"
             height={"90%"}
             width={"90%"}
