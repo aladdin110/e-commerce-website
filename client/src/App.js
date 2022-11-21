@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useRef, lazy, Suspense, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "./components/Navbar/navbar";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes,useParams } from "react-router-dom";
 
 import LayoutOne from "./layouts/LayoutOne";
 import { ToastProvider } from "react-toast-notifications";
@@ -24,7 +24,7 @@ function App() {
   const dispatch = useDispatch();
   const Product = useSelector((state) => state.Product);
   console.log(Product);
-
+  let { id } = useParams();
   return (
 
     <ToastProvider placement="bottom-left">

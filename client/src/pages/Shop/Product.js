@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React, { Fragment } from "react";
+import { Route, useParams } from "react-router-dom";
 import MetaTags from "react-meta-tags";
 import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
 import { connect } from "react-redux";
@@ -8,9 +9,15 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import RelatedProductSlider from "../../wrappers/product/RelatedProductSlider";
 import ProductDescriptionTab from "../../wrappers/product/ProductDescriptionTab";
 import ProductImageDescription from "../../wrappers/product/ProductImageDescription";
+import { useDispatch, useSelector } from "react-redux";
 
-const Product = ({ location, product }) => {
- 
+
+const Product = ({ location }) => {
+
+  let { id } = useParams();
+    const product = useSelector((state) => state.productData.products.filter(
+    single => single.id === id
+  )[0])
   return (
     <Fragment>
       <MetaTags>
@@ -53,14 +60,14 @@ Product.propTypes = {
   product: PropTypes.object
 };
 
-const mapStateToProps = (state, ownProps) => {
-  
-  const itemId = "8";
+/* const mapStateToProps = (state, ownProps) => {
+
+  const itemId = ownProps.match.params.id;
   return {
     product: state.productData.products.filter(
       single => single.id === itemId
     )[0]
   };
-};
+}; */
 
-export default connect(mapStateToProps)(Product);
+export default (Product);
