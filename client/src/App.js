@@ -15,6 +15,7 @@ const Home = lazy(() => import("./pages/home/Home"));
 const Shop = lazy(() => import("./pages/Shop/Shop"));
 const AboutUs = lazy(() => import("./pages/aboutus/AboutUs"));
 const ContactUs = lazy(() => import("./pages/contact/ContactUs"));
+const LoginRegister=lazy(()=>import("./pages/loginandregister/LoginRegister.js"));
 /* 
  */
 
@@ -58,12 +59,14 @@ function App() {
                   }
                   render={(routeProps) => (
               
-                        <Productt />
-                    
-                  
-                )}
+                    <Productt {...routeProps} key={routeProps.params.id} />
+                
+              
+            )}
                 ></Route>
                 <Route path="contactus" element={<ContactUs />}></Route>
+                <Route path="login-register" element={<LoginRegister />}></Route>
+
                 <Route replace to="/" />
               </Routes>
 
