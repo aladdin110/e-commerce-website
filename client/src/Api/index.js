@@ -13,6 +13,7 @@ export const authRequest = async (formData) => {
         }
       }).then(res => {
        store.dispatch(authUser(res.data));
+       alert(res.data)
 })
 }
 export const registerRequest = async (formData) => {
