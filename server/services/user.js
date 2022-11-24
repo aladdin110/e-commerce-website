@@ -13,7 +13,8 @@ export const getUsers = async(req, res) => {
 //handle create user request
 export const createUser = async(req, res) => {
     //store request body
-    const {firstName, lastName, email, phone, username, password} = req.body;
+    const {firstName, lastName, email, phone, password} = req.body;
+    const username = email.substring(0, email.indexOf('@'));   
     const user = new User({
         firstName,
         lastName,
@@ -21,10 +22,10 @@ export const createUser = async(req, res) => {
         phone,
         username,
         password
-    })
+    });
     //encrypt password before saving
-    const salt = bcrypt.genSaltSync(10);
-    user.password = bcrypt.hashSync(password, salt);
+    const salt =  await bcrypt.genSaltSync(10);
+    user.password =  bcrypt.hashSync(password, salt);
     //attempt to save created user in db
     user.save((err, user) => {
         if(err){

@@ -1,22 +1,32 @@
 /* authentication request handling service*/
 import passportJwt from 'passport-jwt';
 var ExtractJwt = passportJwt.ExtractJwt;
+import { User } from '../models/user.js';
+import bcrypt from "bcryptjs";
+
 
 import { secretKey } from '../config.js';
 import jwt from 'jsonwebtoken'; // used to create, sign, and verify tokens
 
 //handle authentication request
-export const authenticate = (req, res) => {
+export const authenticate = async (req, res) => {
     const {username, password} = req.body;
-    //sign user with jwt token
-    jwt.sign({username, password}, secretKey,
-        {expiresIn: 3600}, function(err, token) {
-            if (err) {
-                res.json(err);
-            } 
-            res.json({username, password, token});    
-        });
-    
+    //first we check username
+    const user = await User.findOne({username: username},'-__v');
+    //check if password is equal to hashed stored in db
+    if (!user || !bcrypt.compareSync(password, user.password)) {
+        res.json({"response": "Nom d'utilisateur ou mot de passe incorrect"})
+    }
+    else {
+        //sign user with jwt token
+        jwt.sign({username, password}, secretKey,
+            {expiresIn: 3600}, function(err, token) {
+                if (err) {
+                    res.json(err);
+                } 
+                res.json({user, token});    
+        });  
+    }   
 }
 
 //handle checking token request

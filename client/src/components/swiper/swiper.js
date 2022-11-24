@@ -1,9 +1,9 @@
+import * as React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Pagination, Autoplay, Navigation } from "swiper";
 // Import Swiper styles
-import "swiper/css";
-import "./swiper.scss";
+
 
 export default function Swiper1() {
   return (

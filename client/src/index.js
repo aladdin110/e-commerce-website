@@ -8,22 +8,22 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { save, load } from "redux-localstorage-simple";
 import { Provider } from "react-redux";
+import { authUser } from './redux/actions/AuthActions';
 import { fetchProducts } from "./redux/actions/productActions";
 import rootReducer from "./redux/reducers/rootReducer";
 import products from "./data/products.json";
 import "./assets/styles/style.scss";
-
 import { composeWithDevTools } from '@redux-devtools/extension';
 // As of React 18
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-const store = createStore(
+export const store = createStore(
   rootReducer,
   load(),
   composeWithDevTools(applyMiddleware(thunk, save()))
 );
 store.dispatch(fetchProducts(products));
-console.log(products)
+console.log(products);
 
 root.render(
   <Provider store={store}>
