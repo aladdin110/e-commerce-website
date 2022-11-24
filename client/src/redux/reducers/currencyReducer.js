@@ -14,7 +14,7 @@ const currencyReducer = (state = initState, action) => {
       return {
         ...state,
         currencySymbol: "$",
-        currencyRate: action.payload.currencyRate,
+        currencyRate: 1,
         currencyName
       };
     }
@@ -22,7 +22,7 @@ const currencyReducer = (state = initState, action) => {
       return {
         ...state,
         currencySymbol: "€",
-        currencyRate: action.payload.currencyRate,
+        currencyRate: 1,
         currencyName
       };
     }
@@ -30,7 +30,7 @@ const currencyReducer = (state = initState, action) => {
       return {
         ...state,
         currencySymbol: "£",
-        currencyRate: action.payload.currencyRate,
+        currencyRate: 1,
         currencyName
       };
     }

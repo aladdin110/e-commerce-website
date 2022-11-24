@@ -53,6 +53,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setCurrency: currencyName => {
+      console.log(currencyName);
       dispatch(setCurrency(currencyName));
     }
   };

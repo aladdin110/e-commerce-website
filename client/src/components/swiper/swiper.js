@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Pagination, Autoplay, Navigation } from "swiper";
+import "./swiper.scss"
 // Import Swiper styles
 
 

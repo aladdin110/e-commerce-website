@@ -13,9 +13,11 @@ import { BreadcrumbsProvider } from "react-breadcrumbs-dynamic";
 const Productt = lazy(() => import("./pages/Shop/Product.js"));
 const Home = lazy(() => import("./pages/home/Home"));
 const Shop = lazy(() => import("./pages/Shop/Shop"));
+const Cart = lazy(() => import("./pages/Cart/Cart"));
 const AboutUs = lazy(() => import("./pages/aboutus/AboutUs"));
 const ContactUs = lazy(() => import("./pages/contact/ContactUs"));
 const LoginRegister=lazy(()=>import("./pages/loginandregister/LoginRegister.js"));
+const Wishlist=lazy(()=>import("./pages/Wishlist/Wishlist"));
 /* 
  */
 
@@ -51,6 +53,8 @@ function App() {
                   
                 </Route>
                 <Route path="shop" element={<Shop />}></Route>
+                <Route path="wishlist" element={<Wishlist />}></Route>
+                <Route path="cart" element={<Cart />}></Route>
                 <Route path="aboutus" element={<AboutUs />}></Route>
                 <Route
                   path={"/product/:id"}

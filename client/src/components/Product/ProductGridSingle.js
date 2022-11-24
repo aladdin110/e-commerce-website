@@ -22,7 +22,9 @@ const ProductGridSingle = ({
   const { addToast } = useToasts();
 console.log(currency)
   const discountedPrice = getDiscountPrice(product.price, product.discount);
+  console.log(discountedPrice)
   const finalProductPrice = +(product.price * currency.currencyRate).toFixed(2);
+  console.log(finalProductPrice)
   const finalDiscountedPrice = +(
     discountedPrice * currency.currencyRate
   ).toFixed(2);
