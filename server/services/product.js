@@ -12,13 +12,23 @@ export const getProducts = async(req, res) => {
 //handle create product request
 export const createProduct = async(req, res) => {
     //store request body
-    const {label, category, available, quantity, description} = req.body;
+    const {sku, label, category, shortDescription, fullDescription, price, available, quantity, discount, offerEnd, recent, rating, tag, image, variation} = req.body;
     const product = new Product({
-        label,
-        category,
-        available,
-        quantity,
-        description
+        sku, 
+        label, 
+        category, 
+        shortDescription, 
+        fullDescription, 
+        price, 
+        available, 
+        quantity, 
+        discount, 
+        offerEnd, 
+        recent, 
+        rating,
+        tag, 
+        image, 
+        variation
     })
     //attempt to save created product in db
     product.save((err, product) => {

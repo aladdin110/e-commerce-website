@@ -40,7 +40,7 @@ console.log(currency)
           className={`product-wrap ${spaceBottomClass ? spaceBottomClass : ""}`}
         >
           <div className="product-img">
-            <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
+            <Link to={process.env.PUBLIC_URL + "/product/" + product.sku}>
               <img
                 className="default-img"
                 src={process.env.PUBLIC_URL + product.image[0]}

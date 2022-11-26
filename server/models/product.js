@@ -27,14 +27,17 @@ const productSchema = new Schema({
     price: {
         type: Number,
         required: true,
+        default: 100,
     },
     available: {
         type: Boolean,
-        required: true
+        required: true,
+        default: false
     },
     quantity: {
         type: Number,
-        required: true
+        required: true,
+        default: 0,
     },
     discount: {
         type: Number
@@ -42,11 +45,16 @@ const productSchema = new Schema({
     offerEnd: {
         type: Date,
     },
-    new: {
+    recent: {
         type: Boolean,
         required: true,
+        default: true,
     },
     rating: {
+        type: Number,
+        default: 4
+    },
+    saleCount: {
         type: Number,
     },
     tag: [

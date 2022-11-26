@@ -14,10 +14,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Product = ({ location }) => {
 
-  let { id } = useParams();
+  let { ref } = useParams();
+ 
     const product = useSelector((state) => state.productData.products.filter(
-    single => single.id === id
+    single => single.sky === ref
   )[0])
+  
   return (
     <Fragment>
       <MetaTags>
