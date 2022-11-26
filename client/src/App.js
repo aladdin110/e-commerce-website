@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes,useParams } from "react-router-dom";
 import LayoutOne from "./layouts/LayoutOne";
 import { ToastProvider } from "react-toast-notifications";
 import { BreadcrumbsProvider } from "react-breadcrumbs-dynamic";
+import { getProducts } from "./Api";
 
 /* 
  */
@@ -23,8 +24,9 @@ const Wishlist=lazy(()=>import("./pages/Wishlist/Wishlist"));
 
 
 function App() {
-  const dispatch = useDispatch();
-  const Product = useSelector((state) => state.Product);
+  //const dispatch = useDispatch();
+  
+  const Product = useSelector((state) => state.productData);
   console.log(Product);
   let { id } = useParams();
   return (
@@ -48,7 +50,7 @@ function App() {
             >
              
               <LayoutOne headerTop="visible"> <Navbar />
- <Routes>
+            <Routes>
                 <Route exact path="/" element={<Home />}>
                   
                 </Route>

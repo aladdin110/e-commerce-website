@@ -11,7 +11,7 @@ import { Provider } from "react-redux";
 import { authUser } from './redux/actions/AuthActions';
 import { fetchProducts } from "./redux/actions/productActions";
 import rootReducer from "./redux/reducers/rootReducer";
-import products from "./redux/products.json";
+//import products from "./redux/products.json";
 import "./assets/styles/style.scss";
 import { composeWithDevTools } from '@redux-devtools/extension';
 // As of React 18
@@ -22,8 +22,8 @@ export const store = createStore(
   load(),
   composeWithDevTools(applyMiddleware(thunk, save()))
 );
-store.dispatch(fetchProducts(products));
-console.log(products);
+
+
 
 root.render(
   <Provider store={store}>

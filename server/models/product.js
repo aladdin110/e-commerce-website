@@ -2,14 +2,31 @@ import { Schema, model } from 'mongoose';
 
 //our model schema to represent product collection in db
 const productSchema = new Schema({
+    sku: {
+        type: String,
+        required: true,
+        unique: true
+    },
     label: {
         type: String,
         required: true,
         unique: true
     },
-    category: {
+    category:[
+        {
+            type: String,
+            required: true
+        }
+    ],
+    shortDescription: {
         type: String,
-        required: true
+    },
+    longDescription: {
+        type: String,
+    },
+    price: {
+        type: Number,
+        required: true,
     },
     available: {
         type: Boolean,
@@ -19,9 +36,50 @@ const productSchema = new Schema({
         type: Number,
         required: true
     },
-    description: {
+    discount: {
+        type: Number
+    },
+    offerEnd: {
+        type: Date,
+    },
+    new: {
+        type: Boolean,
+        required: true,
+    },
+    rating: {
+        type: Number,
+    },
+    tag: [
+        {
+            type: String,
+        }
+    ],
+    image: [
+       {
         type: String,
-    }
+       }
+    ],
+    variation: [
+        {
+            color: {
+                type: String,
+            },
+            image: {
+                type: String,
+            },
+            size: [
+                {
+                    name: {
+                        type: String,
+                    },
+                    stock: {
+                        type: Number,
+                    }
+                }
+            ]
+        }
+    ]
+
 });
 
 //create and export product model from the above schema

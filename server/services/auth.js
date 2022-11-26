@@ -1,9 +1,10 @@
 /* authentication request handling service*/
 import passportJwt from 'passport-jwt';
 var ExtractJwt = passportJwt.ExtractJwt;
+var JwtStrategy = passportJwt.Strategy;
 import { User } from '../models/user.js';
 import bcrypt from "bcryptjs";
-
+import passport from "passport";
 
 import { secretKey } from '../config.js';
 import jwt from 'jsonwebtoken'; // used to create, sign, and verify tokens
@@ -33,9 +34,9 @@ export const authenticate = async (req, res) => {
 export const checkToken = (req, res) => {
     var opts = {};
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-    opts.secretOrKey = secretKey;    
+    opts.secretOrKey = secretKey;  
     //check if jwt token is valid or not
-    jwtPassport = passport.use(new JwtStrategy(opts,
+    passport.use(new JwtStrategy(opts,
         (jwt_payload, done) => {
             console.log("JWT payload: ", jwt_payload);
             User.findOne({_id: jwt_payload._id}, (err, user) => {

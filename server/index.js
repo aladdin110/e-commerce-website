@@ -7,6 +7,7 @@ import UserRouter from './routes/user.js';
 import OrderRouter from './routes/order.js';
 import CommentRouter from './routes/comment.js';
 import AuthRouter from './routes/auth.js';
+import passport from "passport";
 
 
 //init express app
@@ -17,6 +18,7 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(express.json());
 app.use(cors());
+app.use(passport.initialize());
 
 
 //include app routers

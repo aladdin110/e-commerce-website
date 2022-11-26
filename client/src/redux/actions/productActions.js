@@ -7,7 +7,7 @@ const fetchProductsSuccess = products => ({
 
 // fetch products
 export const fetchProducts = products => {
-  console.log(products)
+  //console.log(products)
   return dispatch => {
     dispatch(fetchProductsSuccess(products));
   };

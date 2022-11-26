@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Swiper from '../../components/swiper/swiper'
 import CategoriessCard from './categoriessCard'
 import TabProduct from '../../components/Product/TabProduct';
 import PropTypes from "prop-types";
+import { getProducts } from '../../Api';
 
 export default function Home() {
+    useEffect(() => {
+      getProducts();
+    },[])
+
+
   return (
     <div>
 <Swiper/>
