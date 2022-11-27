@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { connect, useSelector } from "react-redux";
 import MenuCart from "./sub-components/MenuCart";
 import { deleteFromCart } from "../../redux/actions/cartActions";
+import "../../assets/styles/style.scss";
+import { logoutRequest } from "../../Api";
+
 
 const IconGroup = ({
   currency,
@@ -23,6 +26,16 @@ const IconGroup = ({
     );
     offcanvasMobileMenu.classList.add("active");
   };
+
+  const authUser = useSelector((state) => state.authUser);
+
+  let navigate = useNavigate();
+
+  //calling the function that dispatches the logout action
+  const handleLogout = () => {
+    logoutRequest();
+    navigate(`/`);
+  }
 
   return (
     <div
@@ -51,7 +64,10 @@ const IconGroup = ({
         <div className="account-dropdown">
           <ul>
             <li>
-              <Link to={process.env.PUBLIC_URL + "/login-register"}>Se connecter/S'inscrire</Link>
+              {!authUser.user && !authUser.token ? <Link to={process.env.PUBLIC_URL + "/login-register"}>Se connecter/S'inscrire </Link> 
+              : <button onClick={handleLogout}>Se déconnecter</button>
+              }
+              
             </li>
             <li>
               <Link to={process.env.PUBLIC_URL + "/my-account"}>

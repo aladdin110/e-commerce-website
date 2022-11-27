@@ -1,17 +1,31 @@
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import "../../assets/styles/style.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {authRequest, registerRequest} from "../../Api/index";
 
+
+
 const LoginRegister = () => {
-    const handleAuth = (e) => {
+
+    //if auth successful, we want to redirect to home
+    let navigate = useNavigate();
+    const handleAuth = async (e) => {
       e.preventDefault();
       var formData = new FormData();
       formData.append('username', e.target[0].value)
       formData.append('password', e.target[1].value)
-      authRequest(formData);
+      const authRes = await authRequest(formData);
+      if (authRes.error) {
+        alert(authRes.error)
+      }
+      else {
+        navigate('/')
+      }
+      
+
     }
     const handleRegister = (e) => {
       e.preventDefault();

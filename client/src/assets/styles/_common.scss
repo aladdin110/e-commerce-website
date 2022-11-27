@@ -90,16 +90,14 @@ p:last-child {
   margin-bottom: 0;
 }
 
-a,
-button {
-  line-height: inherit;
+a {
+  line-height: inherit ;
 
   cursor: pointer;
   text-decoration: none !important;
 
-  color: #000;
+  color: #000 ;
 }
-
 a,
 button,
 img,
@@ -114,7 +112,6 @@ span {
 
 a:focus {
   text-decoration: none;
-
   color: inherit;
   outline: none;
 }

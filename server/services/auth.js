@@ -16,7 +16,7 @@ export const authenticate = async (req, res) => {
     const user = await User.findOne({username: username},'-__v');
     //check if password is equal to hashed stored in db
     if (!user || !bcrypt.compareSync(password, user.password)) {
-        res.json({"response": "Nom d'utilisateur ou mot de passe incorrect"})
+        res.json({"error": "Nom d'utilisateur ou mot de passe incorrect"})
     }
     else {
         //sign user with jwt token
