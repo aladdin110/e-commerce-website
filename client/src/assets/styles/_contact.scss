@@ -143,23 +143,7 @@
       margin-bottom: 0;
       padding: 20px 14px;
     }
-    button {
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1;
-
-      margin-top: 38px;
-      padding: 15px 52px;
-
-      text-transform: uppercase;
-
-      color: #fff;
-      border: none;
-      background-color: #404040;
-      &:hover {
-        background-color: $theme-color;
-      }
-    }
+   
   }
   p {
     color: #333;

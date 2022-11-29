@@ -12,7 +12,10 @@ export const getProducts = async(req, res) => {
 //handle create product request
 export const createProduct = async(req, res) => {
     //store request body
-    const {sku, label, category, shortDescription, fullDescription, price, available, quantity, discount, offerEnd, recent, rating, tag, image, variation} = req.body;
+    const {sku, label, categories, shortDescription, fullDescription, price, quantity, tags, images} = req.body;
+    const tag = tags.split(',')
+    const category = categories.split(',')
+    const image = images.split(',')
     const product = new Product({
         sku, 
         label, 
@@ -20,15 +23,9 @@ export const createProduct = async(req, res) => {
         shortDescription, 
         fullDescription, 
         price, 
-        available, 
         quantity, 
-        discount, 
-        offerEnd, 
-        recent, 
-        rating,
         tag, 
         image, 
-        variation
     })
     //attempt to save created product in db
     product.save((err, product) => {
@@ -42,10 +39,13 @@ export const createProduct = async(req, res) => {
 //handle update product request
 export const updateProduct = async(req, res) => {
     //store request body
-    const {_id, label, category, available, quantity, description} = req.body;
+    const {_id, sku, label, categories, shortDescription, fullDescription, price, quantity, tags, images, variation} = req.body;
+    const tag = tags.split(',')
+    const category = categories.split(',')
+    const image = images.split(',')
     //updating by using findOneAndUpdate witch takes the match object and the update object as arguments
     const product = await Product.findOneAndUpdate({_id: _id},
-        { label, category, available, quantity, description}, 
+        { sku, label, categories, shortDescription, fullDescription, price, quantity, tags, images, variation}, 
         { new: true}).catch((err) => res.json(err));
     res.json(product);
 }

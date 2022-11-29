@@ -360,7 +360,7 @@ ProductModal.propTypes = {
   onHide: PropTypes.func,
   product: PropTypes.object,
   show: PropTypes.bool,
-  wishlistitem: PropTypes.object
+  wishlistitem: PropTypes.array
 };
 
 const mapStateToProps = state => {

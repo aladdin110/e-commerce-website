@@ -8,6 +8,7 @@ import LayoutOne from "./layouts/LayoutOne";
 import { ToastProvider } from "react-toast-notifications";
 import { BreadcrumbsProvider } from "react-breadcrumbs-dynamic";
 import { getProducts } from "./Api";
+import Products from "./pages/admin/Products";
 
 /* 
  */
@@ -74,6 +75,7 @@ function App() {
                 <Route path="login-register" element={<LoginRegister />}></Route>
 
                 <Route replace to="/" />
+                <Route path="products-admin" element={<Products/>} />
               </Routes>
 
               </LayoutOne>

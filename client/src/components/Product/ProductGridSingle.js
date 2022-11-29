@@ -20,14 +20,15 @@ const ProductGridSingle = ({
 }) => {
   const [modalShow, setModalShow] = useState(false);
   const { addToast } = useToasts();
-console.log(currency)
+//console.log(currency)
   const discountedPrice = getDiscountPrice(product.price, product.discount);
-  console.log(discountedPrice)
+  //console.log(discountedPrice)
   const finalProductPrice = +(product.price * currency.currencyRate).toFixed(2);
-  console.log(finalProductPrice)
+  //console.log(finalProductPrice)
   const finalDiscountedPrice = +(
     discountedPrice * currency.currencyRate
   ).toFixed(2);
+
 
   return (
     <Fragment>
@@ -72,10 +73,10 @@ console.log(currency)
             <div className="product-action">
               <div className="pro-same-action pro-wishlist">
                 <button
-                  className={wishlistItem !== undefined ? "active" : ""}
-                  disabled={wishlistItem !== undefined}
+                  className={wishlistItem.length !== 0 ? "active" : ""}
+                  disabled={wishlistItem.length !== 0}
                   title={
-                    wishlistItem !== undefined
+                    wishlistItem.length !== 0
                       ? "Added to wishlist"
                       : "Add to wishlist"
                   }
@@ -183,13 +184,13 @@ ProductGridSingle.propTypes = {
   addToCart: PropTypes.func,
   addToCompare: PropTypes.func,
   addToWishlist: PropTypes.func,
-  cartItem: PropTypes.object,
+  cartItem: PropTypes.array,
   compareItem: PropTypes.object,
   currency: PropTypes.object,
   product: PropTypes.object,
   sliderClassName: PropTypes.string,
   spaceBottomClass: PropTypes.string,
-  wishlistItem: PropTypes.object
+  wishlistItem: PropTypes.array
 };
 
 export default ProductGridSingle;

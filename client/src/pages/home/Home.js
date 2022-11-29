@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Swiper from '../../components/swiper/swiper'
 import CategoriessCard from './categoriessCard'
 import TabProduct from '../../components/Product/TabProduct';
 import PropTypes from "prop-types";
 import { getProducts } from '../../Api';
+import { useSelector } from 'react-redux';
 
 export default function Home() {
     useEffect(() => {
@@ -13,9 +14,9 @@ export default function Home() {
 
   return (
     <div>
-<Swiper/>
-<FeatureIcon spaceTopClass="pt-100" spaceBottomClass="pb-60" />
-<TabProduct spaceBottomClass="pb-60" category="fashion" />
+      <Swiper/>
+      <FeatureIcon spaceTopClass="pt-100" spaceBottomClass="pb-60" />
+      <TabProduct spaceBottomClass="pb-60" category="fashion" />
     </div>
   )
 }

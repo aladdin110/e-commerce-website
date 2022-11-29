@@ -1,14 +1,18 @@
 import PropTypes from "prop-types";
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
+import React, { Fragment, useState } from "react";
+import { connect, useSelector } from "react-redux";
 import { getProducts } from "../../helpers/product";
 import ProductGridSingle from "./ProductGridSingle";
 import { addToCart } from "../../redux/actions/cartActions";
 import { addToWishlist } from "../../redux/actions/wishlistActions";
 import { addToCompare } from "../../redux/actions/compareActions";
 
+
+
+
+
+
 const ProductGrid = ({
-  products,
   currency,
   addToCart,
   addToWishlist,
@@ -19,6 +23,9 @@ const ProductGrid = ({
   sliderClassName,
   spaceBottomClass
 }) => {
+  const productsData = useSelector((state) => state.productData)
+  const products = productsData.products
+
   return (
     <Fragment>
       {products.map(product => {
@@ -32,12 +39,12 @@ const ProductGrid = ({
             addToWishlist={addToWishlist}
             addToCompare={addToCompare}
             cartItem={
-              cartItems.filter(cartItem => cartItem.id === product.id)[0]
+              cartItems.filter(cartItem => cartItem.id === product.id)
             }
             wishlistItem={
               wishlistItems.filter(
                 wishlistItem => wishlistItem.id === product.id
-              )[0]
+              )
             }
             compareItem={
               compareItems.filter(
@@ -53,13 +60,12 @@ const ProductGrid = ({
 };
 
 ProductGrid.propTypes = {
-  addToCart: PropTypes.func,
+   addToCart: PropTypes.func,
   addToCompare: PropTypes.func,
   addToWishlist: PropTypes.func,
   cartItems: PropTypes.array,
   compareItems: PropTypes.array,
   currency: PropTypes.object,
-  products: PropTypes.array,
   sliderClassName: PropTypes.string,
   spaceBottomClass: PropTypes.string,
   wishlistItems: PropTypes.array
@@ -67,12 +73,6 @@ ProductGrid.propTypes = {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    products: getProducts(
-      state.productData.products,
-      ownProps.category,
-      ownProps.type,
-      ownProps.limit
-    ),
     currency: state.currencyData,
     cartItems: state.cartData,
     wishlistItems: state.wishlistData,

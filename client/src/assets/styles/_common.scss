@@ -98,6 +98,23 @@ a {
 
   color: #000 ;
 }
+button {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+
+  margin-top: 38px;
+  padding: 15px 52px;
+
+  text-transform: uppercase;
+
+  color: #fff;
+  border: none;
+  background-color: #404040;
+  &:hover {
+    background-color: $theme-color;
+  }
+}
 a,
 button,
 img,
@@ -130,6 +147,11 @@ ul {
   padding: 0;
 
   list-style: outside none none;
+}
+
+label {
+  color: $theme-color;
+  font-style:bold;
 }
 
 /*-- 
@@ -1340,7 +1362,7 @@ textarea:-ms-input-placeholder {
 
 input {
   font-size: 14px;
-
+  margin-bottom: 8px;
   width: 100%;
   height: 45px;
   padding-left: 10px;
@@ -1350,15 +1372,15 @@ input {
   background: #eceff8;
   box-shadow: none;
 }
-
+.select-box, .files-box {
+  background: #eceff8;
+  margin-bottom: 8px;
+}
 select {
   font-size: 14px;
-
   width: 100%;
-
   color: #333;
-  border: 0 solid #eceff8;
-  background: transparent;
+  border: 2px solid #eceff8;
   box-shadow: none;
 }
 
@@ -1377,7 +1399,7 @@ input:focus {
 
 textarea {
   font-size: 14px;
-
+  margin-bottom: 8px;
   width: 100%;
   padding: 10px;
 
@@ -1758,6 +1780,13 @@ textarea:focus {
       }
     }
   }
+}
+#add-variation {
+  width: fit-content;
+  background-color: $theme-color;
+}
+#add-variation:hover {
+  background-color: $bg-black;
 }
 
 a.default-btn {
