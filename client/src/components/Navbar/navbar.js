@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 
 export default function Navbar() {
-  const user = useSelector(state => state.authUser.user)
+  const authUser = useSelector(state => state.authUser)
   return (
     <div className="navbar">
       <li className="navBar-list">
@@ -29,13 +29,12 @@ export default function Navbar() {
       </li>
       <li className="navBar-list">
         <div className=" navBar-item">
-          {user.email.includes("admin") && <Link to="aboutus">About Us</Link>}
+          {(authUser.user && authUser.user.email.includes("admin")) ? <Link to="products-admin">Products</Link> : <Link to="aboutus">About Us</Link>}
         </div>
       </li>
       <li className="navBar-list">
         <div className=" navBar-item">
-          {user.email.includes("admin") && <Link to="aboutus">About US</Link>}
-          <Link to="contactus">Contact Us</Link>
+          {(!authUser.user || !authUser.user.email.includes("admin") ) && <Link to="contactus">Contact Us</Link>}
         </div>
       </li>
       <IconGroup/>
