@@ -16,7 +16,7 @@ const Product = ({ location }) => {
 
   let { ref } = useParams();
  
-    const product = useSelector((state) => state.productData.products.filter(
+  const product = useSelector((state) => state.productData.products.filter(
     single => single.sky === ref
   )[0])
   

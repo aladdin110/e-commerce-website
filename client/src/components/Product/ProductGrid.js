@@ -60,7 +60,7 @@ const ProductGrid = ({
 };
 
 ProductGrid.propTypes = {
-   addToCart: PropTypes.func,
+  addToCart: PropTypes.func,
   addToCompare: PropTypes.func,
   addToWishlist: PropTypes.func,
   cartItems: PropTypes.array,
