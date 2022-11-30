@@ -45,7 +45,7 @@ export const updateProduct = async(req, res) => {
     const image = images.split(',')
     //updating by using findOneAndUpdate witch takes the match object and the update object as arguments
     const product = await Product.findOneAndUpdate({_id: _id},
-        { sku, label, categories, shortDescription, fullDescription, price, quantity, tags, images, variation}, 
+        { sku, label, category, shortDescription, fullDescription, price, quantity, tag, image, variation}, 
         { new: true}).catch((err) => res.json(err));
     res.json(product);
 }
