@@ -26,10 +26,8 @@ const Wishlist=lazy(()=>import("./pages/Wishlist/Wishlist"));
 
 function App() {
   //const dispatch = useDispatch();
-  
   const Product = useSelector((state) => state.productData);
   console.log(Product);
-  let { id } = useParams();
   return (
 
     <ToastProvider placement="bottom-left">

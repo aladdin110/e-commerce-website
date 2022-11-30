@@ -51,7 +51,7 @@ const ProductGridSingle = ({
                 <img
                   className="hover-img"
                   src={process.env.PUBLIC_URL + product.image[1]}
-                  alt=""
+                  alt = ""
                 />
               ) : (
                 ""

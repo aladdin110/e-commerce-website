@@ -35,9 +35,9 @@ const ProductForm = () => {
     const handleProductSubmit = (e) => {
         e.preventDefault();
         //add selected categories data
-        formData.append('categories', selectedCategories) 
+        formData.append('category', selectedCategories) 
          //add selected tags data
-        formData.append('tags', selectedTags) 
+        formData.append('tag', selectedTags) 
         //add selected categories data
        /*  for (var i = 0; i< selectedCategories.length; i++) {
             formData.append('categories[]',selectedCategories[i].value)       
@@ -51,8 +51,10 @@ const ProductForm = () => {
             && e.target[i].getAttribute("name") != "tags" && !e.target[i].classList.contains("select__input")) 
             {
                 if (e.target[i].getAttribute("type") == "file") {
+                    
                     for (var j = 0; j< e.target[i].files.length; j++) {
-                        formData.append('images',e.target[i].files[j].name)
+                        const path = "/assets/img/product/fashion/" + e.target[i].files[j].name;
+                        formData.append('image', path)
                     }
                 }
                 else {
@@ -60,7 +62,7 @@ const ProductForm = () => {
                 }
             }
         }
-        formData.set('images',formData.getAll('images'));
+        formData.set('image',formData.getAll('images'));
         console.log(formData);
         createProduct(formData);
     }
@@ -88,7 +90,7 @@ const ProductForm = () => {
                     placeholder="Label"
                     required
                 />
-                <div className="d-flex flex-column align-items-start select-box" >
+                <div className="d-flex flex-column align-items-start select-box">
                     <label htmlFor="categories">Select categories</label>
                     <Select
                         isMulti
@@ -140,7 +142,7 @@ const ProductForm = () => {
                 <div className="d-flex flex-column align-items-start files-box">
                     <label htmlFor="images">Upload product images</label>
                     <input type="file" name="images[]" id="images" 
-                        accept="image/png, image/gif, image/jpeg" multiple></input>
+                        accept="image/png, image/gif, image/jpeg" multiple required></input>
                 </div>
                 <button type="button" role="button" id ="add-variation" onClick={handleAddVariation}>Add product variation</button>
                 <hr></hr>

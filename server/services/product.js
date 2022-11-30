@@ -12,10 +12,17 @@ export const getProducts = async(req, res) => {
 //handle create product request
 export const createProduct = async(req, res) => {
     //store request body
-    const {sku, label, categories, shortDescription, fullDescription, price, quantity, tags, images} = req.body;
-    const tag = tags.split(',')
-    const category = categories.split(',')
-    const image = images.split(',')
+    var {sku, label, category, shortDescription, fullDescription, price, quantity, tag, image} = req.body;
+    console.log(tag);
+    if (tag) {
+        tag = tag.split(',')
+    }
+    if (category) {
+       category = category.split(',')
+    }
+    if (image) {
+       image = image.split(',')
+    }
     const product = new Product({
         sku, 
         label, 
@@ -39,10 +46,16 @@ export const createProduct = async(req, res) => {
 //handle update product request
 export const updateProduct = async(req, res) => {
     //store request body
-    const {_id, sku, label, categories, shortDescription, fullDescription, price, quantity, tags, images, variation} = req.body;
-    const tag = tags.split(',')
-    const category = categories.split(',')
-    const image = images.split(',')
+    var {_id, sku, label, category, shortDescription, fullDescription, price, quantity, tag, image, variation} = req.body;
+    if (tag) {
+        tag = tag.split(',')
+    }
+    if (category) {
+        category = category.split(',')
+    }
+    if (image) {
+        image = image.split(',')
+    }
     //updating by using findOneAndUpdate witch takes the match object and the update object as arguments
     const product = await Product.findOneAndUpdate({_id: _id},
         { sku, label, category, shortDescription, fullDescription, price, quantity, tag, image, variation}, 

@@ -16,6 +16,7 @@ import "./assets/styles/style.scss";
 import { composeWithDevTools } from '@redux-devtools/extension';
 // As of React 18
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 export const store = createStore(
   rootReducer,
