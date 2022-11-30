@@ -29,12 +29,17 @@ export default function Navbar() {
       </li>
       <li className="navBar-list">
         <div className=" navBar-item">
-          {(authUser.user && authUser.user.email.includes("admin")) ? <Link to="products-admin">Products</Link> : <Link to="aboutus">About Us</Link>}
+           <Link to="products-admin">Products</Link> 
         </div>
       </li>
       <li className="navBar-list">
         <div className=" navBar-item">
-          {(!authUser.user || !authUser.user.email.includes("admin") ) && <Link to="contactus">Contact Us</Link>}
+         <Link to="contactus">Contact Us</Link>
+        </div>
+      </li>
+      <li className="navBar-list">
+        <div className=" navBar-item">
+         <Link to="aboutus">About Us</Link>
         </div>
       </li>
       <IconGroup/>
