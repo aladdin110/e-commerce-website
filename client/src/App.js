@@ -9,11 +9,12 @@ import { ToastProvider } from "react-toast-notifications";
 import { BreadcrumbsProvider } from "react-breadcrumbs-dynamic";
 import { getProducts } from "./Api";
 import Products from "./pages/admin/Products";
+import Home from  "./pages/home/Home";
+
 
 /* 
  */
 const Productt = lazy(() => import("./pages/Shop/Product.js"));
-const Home = lazy(() => import("./pages/home/Home"));
 const Shop = lazy(() => import("./pages/Shop/Shop"));
 const Cart = lazy(() => import("./pages/Cart/Cart"));
 const AboutUs = lazy(() => import("./pages/aboutus/AboutUs"));

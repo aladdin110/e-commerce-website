@@ -9,6 +9,7 @@ const ProductForm = () => {
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedTags, setSelectedTags] = useState([]);
 
+
     //handle categories selection
     const handleCategoriesChange = (values) => {
         var temp = []
@@ -63,8 +64,10 @@ const ProductForm = () => {
             }
         }
         formData.set('image',formData.getAll('images'));
+    
         console.log(formData);
         createProduct(formData);
+        alert("produit soumis")
     }
 
     //when add variation button is clicked, variation input fields group should be rendered
